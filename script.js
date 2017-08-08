@@ -1,5 +1,5 @@
 // let url = 'http://recipepuppyproxy.herokuapp.com/api/?q=omelet';
-let url = 'http://recipepuppyproxy.herokuapp.com/api/?q=';
+let url = 'https://recipepuppyproxy.herokuapp.com/api/?q=';
 
 let sampleSearch = `{"title":"Recipe Puppy","version":0.1,"href":"http://www.recipepuppy.com/","results":
 [{"title":"Biscuit Topped Steak Pie","href":"http://www.recipezaar.com/Biscuit-Topped-Steak-Pie-82443","ingredients":"potato, beef gravy, black pepper, vegetable, biscuit, sirloin steak, thyme","thumbnail":"http://img.recipepuppy.com/169916.jpg"},
