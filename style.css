@@ -17,6 +17,10 @@ html, body {
   background-color: rgb(220,203,149);
 }
 
+h1 {
+  text-align: center;
+}
+
 .search {
   background-color: rgb(143,129,83);
   border-style: solid;
@@ -26,6 +30,9 @@ html, body {
   margin: 20px;
   width: 80%;
   box-shadow: 10px 10px 5px #888888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search label {
