@@ -16,7 +16,8 @@ let divForSearchResults = document.querySelector('.search-results');
 let inputSearchTerm = document.querySelector('#search-term');
 let searchButton = document.querySelector('#search-button');
 
-updatePageContents(sampleSearchJSON);
+// uncomment this to load some default data.
+// updatePageContents(sampleSearchJSON);
 
 function process(value) {
   return encodeURIComponent(value.toLowerCase().replace(/[^a-z0-9 _-]+/gi, '-'));
