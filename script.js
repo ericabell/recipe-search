@@ -18,14 +18,18 @@ let searchButton = document.querySelector('#search-button');
 
 updatePageContents(sampleSearchJSON);
 
-
+function process(value) {
+  return encodeURIComponent(value.toLowerCase().replace(/[^a-z0-9 _-]+/gi, '-'));
+}
 
 searchButton.addEventListener('click', (event) => {
   // grab the contents of the search field
   let searchString = inputSearchTerm.value;
+  // clear the input for next input
+  inputSearchTerm.value = '';
   console.log(`User searched for: ${searchString}`);
 
-  let newSearchURL = url + searchString;
+  let newSearchURL = url + process(searchString);
   searchForRecipes(newSearchURL);
 })
 

@@ -77,7 +77,8 @@ html, body {
 }
 
 .recipe-image {
-  flex-basis: 100%;
-  flex: display;
-  justify-content: center;
+  /*flex-basis: 100%;*/
+  /*flex: display;*/
+  /*justify-content: center;*/
+  margin: 10px;
 }
