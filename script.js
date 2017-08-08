@@ -21,5 +21,30 @@ function searchForRecipes(url) {
     })
     .then( (data) => {
       console.log(data);
+      updatePageContents(data);
     })
+}
+
+function updatePageContents(data) {
+  let results = data.results;
+  // hold all our search results
+  let recipeResultsContent = '';
+  results.forEach( (recipe) => {
+    let htmlForNewRecipe = `
+      <div class='recipe'>
+        <div class='recipe-title'>
+          ${recipe.title}
+        </div>
+        <div class='recipe-ingredients'>
+          ${recipe.ingredients}
+        </div>
+        <div class='recipe-image'>
+          <a href=${recipe.href}><img src=${recipe.thumbnail || 'http://via.placeholder.com/350x150'}  </a>
+      </div>
+    `
+    // append the one recipe to all the search results
+    recipeResultsContent += htmlForNewRecipe;
+  });
+  // update the page
+  divForSearchResults.innerHTML = recipeResultsContent;
 }
