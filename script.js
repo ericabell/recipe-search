@@ -53,25 +53,31 @@ function searchForRecipes(url) {
 
 function updatePageContents(data) {
   let results = data.results;
-  // hold all our search results
-  let recipeResultsContent = '';
-  results.forEach( (recipe) => {
-    let htmlForNewRecipe = `
-      <div class='recipe'>
-        <div class='recipe-title'>
-          ${recipe.title}
+  // make sure we got some results back
+  if(results.length === 0) {
+    console.log('No results');
+    divForSearchResults.innerHTML = `<h1>No results</h1>`;
+  } else {
+    // hold all our search results
+    let recipeResultsContent = '';
+    results.forEach( (recipe) => {
+      let htmlForNewRecipe = `
+        <div class='recipe'>
+          <div class='recipe-title'>
+            ${recipe.title}
+          </div>
+          <div class='recipe-ingredients'>
+            ${recipe.ingredients}
+          </div>
+          <div class='recipe-image'>
+            <a href='${recipe.href}'><img src='${recipe.thumbnail || 'http://via.placeholder.com/100x80'}'>  </a>
+          </div>
         </div>
-        <div class='recipe-ingredients'>
-          ${recipe.ingredients}
-        </div>
-        <div class='recipe-image'>
-          <a href='${recipe.href}'><img src='${recipe.thumbnail || 'http://via.placeholder.com/100x80'}'>  </a>
-        </div>
-      </div>
-    `
-    // append the one recipe to all the search results
-    recipeResultsContent += htmlForNewRecipe;
-  });
-  // update the page
-  divForSearchResults.innerHTML = recipeResultsContent;
+      `
+      // append the one recipe to all the search results
+      recipeResultsContent += htmlForNewRecipe;
+    });
+    // update the page
+    divForSearchResults.innerHTML = recipeResultsContent;
+  }
 }
