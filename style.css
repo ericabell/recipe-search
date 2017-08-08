@@ -45,6 +45,10 @@ html, body {
   border-radius: 10px;
 }
 
+#search-button:hover {
+  background-color: rgb(140,90,143);
+}
+
 .search-results {
   display: flex;
   flex-wrap: wrap;
