@@ -38,7 +38,12 @@ searchButton.addEventListener('click', (event) => {
 function searchForRecipes(url) {
   fetch(url)
     .then( (response) => {
-      return response.json();
+      // check the server's response
+      if ( response.status == 200 ) {
+        return response.json();
+      } else {
+        reject('Server Error');
+      }
     })
     .then( (data) => {
       console.log(JSON.stringify(data));
