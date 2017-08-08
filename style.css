@@ -1,15 +1,31 @@
+/*
+ COLORS
+
+ rgb(143,129,83)
+ rgb(176,226,215)
+ rgb(220,203,149)
+ rgb(164,98,169)
+ rgb(140,90,143)
+
+*/
+
+
 html, body {
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;
+  width: 100%;
+  background-color: rgb(220,203,149);
 }
 
 .search {
+  background-color: rgb(143,129,83);
   border-style: solid;
   border-width: 2px;
   border-radius: 10px;
   padding: 50px;
   margin: 20px;
-  width: 70%;
+  width: 80%;
+  box-shadow: 10px 10px 5px #888888;
 }
 
 .search label {
@@ -37,25 +53,31 @@ html, body {
 }
 
 .recipe {
+  background-color: rgb(176,226,215);
+  border-radius: 10px;
   flex-basis: 30%;
   border-style: solid;
   border-width: 2px;
   margin: 10px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  height: 200px;
+  box-shadow: 10px 10px 5px #888888;
 }
 
 .recipe-title {
   flex-basis: 100%;
+  margin: 5px;
 }
 
 .recipe-ingredients {
   flex-basis: 100%;
-
+  margin: 0 5px;
+  font-size: 0.5em;
 }
 
 .recipe-image {
   flex-basis: 100%;
-
+  flex: display;
+  justify-content: center;
 }
