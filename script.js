@@ -28,6 +28,7 @@ searchButton.addEventListener('click', (event) => {
   let searchString = inputSearchTerm.value;
   // clear the input for next input
   inputSearchTerm.value = '';
+  inputSearchTerm.focus();
   console.log(`User searched for: ${searchString}`);
 
   let newSearchURL = url + process(searchString);
